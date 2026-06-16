@@ -1,0 +1,141 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family:
+    Segoe UI,
+    sans-serif;
+  background: #fff8f2;
+  color: #333;
+  line-height: 1.7;
+}
+
+.hero {
+  height: 100vh;
+  background: linear-gradient(135deg, #ff8c42, #ffb347);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+}
+
+.hero h1 {
+  font-size: 4rem;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 1.3rem;
+  margin-bottom: 30px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 15px 35px;
+  background: white;
+  color: #ff8c42;
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+}
+
+nav {
+  position: sticky;
+  top: 0;
+  background: white;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  padding: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+}
+
+nav a {
+  color: #ff8c42;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+section {
+  padding: 80px 10%;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 50px;
+  color: #ff8c42;
+  font-size: 2.5rem;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+}
+
+.card {
+  background: white;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+}
+
+.work {
+  background: white;
+  padding: 25px;
+  border-radius: 15px;
+  border-left: 5px solid #ff8c42;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.work h3 {
+  color: #ff8c42;
+}
+
+.work span {
+  display: block;
+  margin: 10px 0;
+  font-weight: bold;
+}
+
+.contacts {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.contacts a {
+  padding: 12px 25px;
+  background: #ff8c42;
+  color: white;
+  text-decoration: none;
+  border-radius: 50px;
+}
+
+footer {
+  text-align: center;
+  padding: 30px;
+  background: #ff8c42;
+  color: white;
+}
