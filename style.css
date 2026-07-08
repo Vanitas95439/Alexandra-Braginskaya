@@ -25,16 +25,14 @@ body {
   align-items: center;
   text-align: center;
   color: white;
-}
-
-.hero h1 {
-  font-size: 4rem;
-  margin-bottom: 20px;
-}
-
-.hero p {
-  font-size: 1.3rem;
-  margin-bottom: 30px;
+  h1 {
+    font-size: 4rem;
+    margin-bottom: 20px;
+  }
+  p {
+    font-size: 1.3rem;
+    margin-bottom: 30px;
+  }
 }
 
 .btn {
@@ -46,10 +44,9 @@ body {
   border-radius: 50px;
   font-weight: bold;
   transition: 0.3s;
-}
-
-.btn:hover {
-  transform: translateY(-3px);
+  &:hover {
+    transform: translateY(-3px);
+  }
 }
 
 nav {
@@ -62,12 +59,11 @@ nav {
   padding: 20px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   z-index: 100;
-}
-
-nav a {
-  color: #ff8c42;
-  text-decoration: none;
-  font-weight: 600;
+  a {
+    color: #ff8c42;
+    text-decoration: none;
+    font-weight: 600;
+  }
 }
 
 section {
@@ -106,39 +102,34 @@ h2 {
   border-radius: 15px;
   border-left: 5px solid #ff8c42;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-}
-
-.work h3 {
-  color: #ff8c42;
-}
-
-.work span {
-  display: block;
-  margin: 10px 0;
-  font-weight: bold;
-}
-
-.work img {
-  width: 100%;
-  height: 300px;
-  object-fit: cover;
-  border-radius: 10px;
-  margin-bottom: 15px;
+  h3 {
+    color: #ff8c42;
+  }
+  span {
+    display: block;
+    margin: 10px 0;
+    font-weight: bold;
+  }
+  img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+  }
 }
 
 .contacts {
   display: flex;
   justify-content: center;
   gap: 20px;
-  flex-wrap: wrap;
-}
-
-.contacts a {
-  padding: 12px 25px;
-  background: #ff8c42;
-  color: white;
-  text-decoration: none;
-  border-radius: 50px;
+  a {
+    padding: 12px 25px;
+    background: #ff8c42;
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+  }
 }
 
 footer {
@@ -146,4 +137,103 @@ footer {
   padding: 30px;
   background: #ff8c42;
   color: white;
+}
+
+@media (max-width: 992px) {
+  .hero h1 {
+    font-size: 3rem;
+  }
+
+  .hero p {
+    font-size: 1.1rem;
+  }
+
+  nav {
+    gap: 20px;
+    padding: 15px;
+  }
+
+  section {
+    padding: 60px 7%;
+  }
+}
+
+/* Телефоны */
+@media (max-width: 768px) {
+  .hero {
+    padding: 20px;
+  }
+
+  .hero h1 {
+    font-size: 2.3rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    padding: 12px;
+  }
+
+  nav a {
+    font-size: 0.95rem;
+    padding: 6px 10px;
+  }
+
+  section {
+    padding: 50px 20px;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .contacts {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contacts a {
+    width: 100%;
+    max-width: 320px;
+    text-align: center;
+  }
+
+  .work img {
+    height: 220px;
+  }
+}
+
+/* Маленькие телефоны */
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+
+  nav {
+    display: none;
+  }
+
+  nav a {
+    width: 100%;
+    text-align: center;
+  }
+
+  .btn {
+    width: 100%;
+    max-width: 260px;
+  }
 }
