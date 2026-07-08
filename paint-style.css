@@ -1,0 +1,177 @@
+:root {
+  --primary-color: #ff8c42;
+  --secondary-color: #ffb56b;
+  --background-color: #fff8f2;
+  --text-color: #333;
+  --card-color: #ffffff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Segoe UI", sans-serif;
+  background: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.7;
+}
+
+/* ---------- Кнопка назад ---------- */
+
+.back {
+  display: inline-block;
+  margin: 40px;
+  padding: 12px 28px;
+  text-decoration: none;
+  color: white;
+  background: var(--primary-color);
+  border-radius: 50px;
+  transition: 0.25s;
+  font-weight: 600;
+}
+
+.back:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(255, 140, 66, 0.3);
+}
+
+/* ---------- Основной блок ---------- */
+
+.painting {
+  max-width: 1400px;
+  margin: auto;
+  padding: 40px;
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 60px;
+  align-items: start;
+}
+
+/* ---------- Картина ---------- */
+
+.painting-image {
+  background: white;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+}
+
+.painting-image img {
+  width: 100%;
+  display: block;
+  border-radius: 12px;
+  transition: 0.3s;
+}
+
+.painting-image img:hover {
+  transform: scale(1.01);
+}
+
+.painting-image a {
+  display: block;
+}
+
+/* ---------- Информация ---------- */
+
+.painting-info {
+  background: white;
+  padding: 35px;
+  border-radius: 20px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+}
+
+.painting-info h1 {
+  font-size: 2.8rem;
+  color: var(--primary-color);
+  margin-bottom: 25px;
+}
+
+.info {
+  margin-bottom: 25px;
+}
+
+.info p {
+  margin: 8px 0;
+}
+
+.info strong {
+  color: var(--primary-color);
+}
+
+.description {
+  margin-top: 25px;
+}
+
+.description h2 {
+  color: var(--primary-color);
+  margin-bottom: 15px;
+}
+
+.description p {
+  text-align: justify;
+  white-space: pre-line;
+}
+
+/* ---------- Анимация ---------- */
+
+.painting-image,
+.painting-info {
+  animation: fade 0.5s ease;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ---------- Телефон ---------- */
+
+@media (max-width: 900px) {
+  .painting {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding: 20px;
+  }
+
+  .painting-info h1 {
+    font-size: 2rem;
+  }
+
+  .back {
+    margin: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .painting {
+    padding: 15px;
+  }
+
+  .painting-info {
+    padding: 20px;
+  }
+
+  .painting-info h1 {
+    font-size: 1.7rem;
+  }
+
+  .back {
+    width: calc(100% - 30px);
+    text-align: center;
+    margin: 15px;
+  }
+}
