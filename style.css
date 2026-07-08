@@ -25,6 +25,11 @@ body {
   line-height: 1.7;
 }
 
+img {
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
 .hero {
   height: 100vh;
   background: linear-gradient(
@@ -114,6 +119,7 @@ h2 {
   border-radius: 15px;
   border-left: 5px solid var(--primary-color);
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  text-align: center;
   h3 {
     color: var(--primary-color);
   }
