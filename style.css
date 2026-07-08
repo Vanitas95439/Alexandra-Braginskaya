@@ -158,6 +158,37 @@ footer {
   color: var(--white-text-color);
 }
 
+.news {
+  display: grid;
+  gap: 20px;
+}
+
+.news-card {
+  background: white;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.news-card h3 {
+  color: var(--primary-color);
+  margin-bottom: 10px;
+}
+
+.news-card small {
+  color: #777;
+}
+
+.news-card p {
+  margin: 15px 0;
+}
+
+.news-card a {
+  color: var(--primary-color);
+  font-weight: bold;
+  text-decoration: none;
+}
+
 @media (max-width: 992px) {
   .hero h1 {
     font-size: 3rem;
