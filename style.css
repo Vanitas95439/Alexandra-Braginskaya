@@ -5,11 +5,11 @@
 }
 
 :root {
-  --primary-color: #ff8c42;
+  --primary-color: #e09132;
   --secondary-color: color-mix(in srgb, var(--primary-color) 80%, white);
-  --background-color: #fff8f2;
-  --black-text-color: #333;
-  --white-text-color: #fff;
+  --background-color: #ffefcd;
+  --black-text-color: #424530;
+  --white-text-color: #ffefcd;
 }
 
 html {

@@ -1,9 +1,9 @@
 :root {
-  --primary-color: #ff8c42;
+  --primary-color: #e09132;
   --secondary-color: #ffb56b;
-  --background-color: #fff8f2;
-  --text-color: #333;
-  --card-color: #ffffff;
+  --background-color: #ffefcd;
+  --text-color: #424530;
+  --card-color: #ffefcd;
 }
 
 * {
@@ -142,9 +142,21 @@ body {
 
 @media (max-width: 900px) {
   .painting {
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
     gap: 30px;
     padding: 20px;
+  }
+
+  .painting-image,
+  .painting-info {
+    width: 100%;
+  }
+
+  .painting-image img {
+    width: 100%;
+    height: auto;
+    display: block;
   }
 
   .painting-info h1 {
@@ -158,7 +170,21 @@ body {
 
 @media (max-width: 480px) {
   .painting {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
     padding: 15px;
+  }
+
+  .painting-image,
+  .painting-info {
+    width: 100%;
+  }
+
+  .painting-image img {
+    width: 100%;
+    height: auto;
+    display: block;
   }
 
   .painting-info {
@@ -167,6 +193,14 @@ body {
 
   .painting-info h1 {
     font-size: 1.7rem;
+  }
+
+  .info p {
+    font-size: 0.95rem;
+  }
+
+  .description p {
+    font-size: 0.95rem;
   }
 
   .back {
