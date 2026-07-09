@@ -43,6 +43,9 @@ img.onload = () => {
 };
 
 img.addEventListener("mouseenter", () => {
+  if (window.innerWidth <= 900) {
+    return;
+  }
   lens.style.display = "block";
 });
 

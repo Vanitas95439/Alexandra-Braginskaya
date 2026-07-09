@@ -29,6 +29,35 @@ async function loadGallery() {
 
     observer.observe(card);
   }
+  setupMobileGallery();
+}
+
+const showMoreBtn = document.getElementById("showMoreBtn");
+
+function setupMobileGallery() {
+  if (window.innerWidth > 768) return;
+
+  const works = [...document.querySelectorAll(".work")];
+
+  if (works.length <= 4) return;
+
+  works.slice(4).forEach((work) => {
+    work.classList.add("hidden-mobile");
+  });
+
+  showMoreBtn.hidden = false;
+
+  let opened = false;
+
+  showMoreBtn.addEventListener("click", () => {
+    opened = !opened;
+
+    works.slice(4).forEach((work) => {
+      work.classList.toggle("show-work", opened);
+    });
+
+    showMoreBtn.textContent = opened ? "Скрыть ▲" : "Показать ещё ▼";
+  });
 }
 
 loadGallery();
