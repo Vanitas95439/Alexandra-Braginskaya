@@ -61,3 +61,40 @@ function setupMobileGallery() {
 }
 
 loadGallery();
+
+const hero = document.querySelector(".hero");
+const background = document.querySelector(".hero-background");
+const content = document.querySelector(".hero-content");
+
+// Компьютер
+if (window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
+  hero.addEventListener("mousemove", (e) => {
+    const x = e.clientX / window.innerWidth - 0.5;
+    const y = e.clientY / window.innerHeight - 0.5;
+
+    background.style.transform = `translate3d(${-x * 35}px, ${-y * 35}px, 0) scale(1.12)`;
+
+    content.style.transform = `translate3d(${x * 10}px, ${y * 10}px, 0)`;
+  });
+
+  hero.addEventListener("mouseleave", () => {
+    background.style.transform = "translate3d(0,0,0) scale(1.12)";
+    content.style.transform = "translate3d(0,0,0)";
+  });
+}
+
+// Телефон
+else {
+  let ticking = false;
+
+  window.addEventListener("scroll", () => {
+    if (ticking) return;
+
+    requestAnimationFrame(() => {
+      background.style.transform = `translate3d(0, ${window.scrollY * 0.3}px, 0) scale(1.12)`;
+      ticking = false;
+    });
+
+    ticking = true;
+  });
+}

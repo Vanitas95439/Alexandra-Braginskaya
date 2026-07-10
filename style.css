@@ -6,7 +6,6 @@
 
 :root {
   --primary-color: #e09132;
-  --secondary-color: color-mix(in srgb, var(--primary-color) 80%, white);
   --background-color: #ffefcd;
   --black-text-color: #424530;
   --white-text-color: #ffefcd;
@@ -31,16 +30,16 @@ img {
 }
 
 .hero {
+  position: relative;
   height: 100vh;
-  background: linear-gradient(
-    135deg,
-    var(--primary-color),
-    var(--secondary-color)
-  );
+
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
+
+  overflow: hidden;
+
   color: var(--white-text-color);
   h1 {
     font-size: 4rem;
@@ -50,6 +49,38 @@ img {
     font-size: 1.3rem;
     margin-bottom: 30px;
   }
+}
+
+.hero-background {
+  position: absolute;
+  inset: -40px;
+
+  background-image: url("img/hero-horizontal.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  transform: translate3d(0, 0, 0) scale(1.12);
+
+  transition: transform 0.08s linear;
+
+  will-change: transform;
+
+  z-index: -2;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+
+  background: rgba(0, 0, 0, 0.35);
+
+  z-index: -1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
 }
 
 .btn {
@@ -190,6 +221,10 @@ footer {
 }
 
 @media (max-width: 992px) {
+  .hero-background {
+    background-image: url("img/hero-vertical.jpg");
+  }
+
   .hero h1 {
     font-size: 3rem;
   }
@@ -237,12 +272,7 @@ footer {
   }
 
   .work img {
-    width: 100%;
-    aspect-ratio: 1 / 1;
-    object-fit: contain;
     max-height: 420px;
-    margin: 0 auto 20px;
-    display: block;
   }
 
   .contacts {
@@ -275,7 +305,7 @@ footer {
     padding: 14px 20px;
 
     background: var(--primary-color);
-    color: white;
+    color: --background-color;
 
     border: none;
     border-radius: 50px;
