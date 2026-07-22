@@ -1,20 +1,23 @@
 const hero = document.querySelector(".hero");
-
 const layers = document.querySelectorAll(".hero-layer img");
-
 const content = document.querySelector(".hero-content");
-
-const speeds = [6, 10, 15, 20];
 
 if (window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
   hero.addEventListener("mousemove", (e) => {
     const x = e.clientX / window.innerWidth - 0.5;
     const y = e.clientY / window.innerHeight - 0.5;
 
-    layers.forEach((layer, index) => {
-      const speed = speeds[index];
+    layers.forEach((layer) => {
+      const speed = parseFloat(
+        getComputedStyle(layer).getPropertyValue("--speed"),
+      );
 
-      layer.style.transform = `translate(${-x * speed}px, ${-y * speed}px) translateX(-50%)`;
+      const baseY = getComputedStyle(layer).getPropertyValue("--base-y");
+
+      layer.style.transform = `translate(
+          calc(-50% + ${-x * speed}px),
+          calc(${baseY} + ${-y * speed}px)
+        )`;
     });
 
     content.style.transform = `translate(${x * 10}px, ${y * 10}px)`;
@@ -22,7 +25,9 @@ if (window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
 
   hero.addEventListener("mouseleave", () => {
     layers.forEach((layer) => {
-      layer.style.transform = "translateX(-50%)";
+      const baseY = getComputedStyle(layer).getPropertyValue("--base-y");
+
+      layer.style.transform = `translate(-50%, ${baseY})`;
     });
 
     content.style.transform = "translate(0,0)";

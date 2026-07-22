@@ -9,7 +9,7 @@
   justify-content: center;
   align-items: center;
 
-  height: 100vh;
+  height: min(100vh, 115vw);
 
   overflow: hidden;
 
@@ -23,120 +23,130 @@
 
 .hero-layer {
   position: absolute;
-
   inset: 0;
 
-  pointer-events: none;
-
   overflow: hidden;
+  pointer-events: none;
 }
 
 .hero-layer img {
   position: absolute;
 
   left: 50%;
-  bottom: -200px;
+  bottom: 0;
 
-  transform: translateX(-50%);
+  transform: translate(-50%, var(--base-y));
 
-  width: 100%;
-  height: 175%;
+  width: max(100vw, 100%);
+  height: auto;
+
+  min-height: 100%;
+
+  max-width: none;
 
   object-fit: contain;
-  object-position: center bottom;
-
-  user-select: none;
-  -webkit-user-drag: none;
 
   will-change: transform;
 }
 
+/* ---------- Слои ---------- */
+
 .layer-1 {
   z-index: -3;
+
+  img {
+    --base-y: 15%;
+  }
 }
 
 .layer-2 {
   z-index: -4;
+
+  img {
+    --base-y: 28%;
+  }
 }
 
 .layer-3 {
   z-index: -5;
+
+  img {
+    --base-y: 28%;
+  }
 }
 
 .layer-4 {
   z-index: -6;
+
   filter: blur(1px);
+
+  img {
+    --base-y: 40%;
+  }
 }
+
+.layer-1 img {
+  --speed: 6;
+}
+
+.layer-2 img {
+  --speed: 10;
+}
+
+.layer-3 img {
+  --speed: 15;
+}
+
+.layer-4 img {
+  --speed: 20;
+}
+
+/* =====================================================
+   OVERLAY
+===================================================== */
 
 .hero-overlay {
   position: absolute;
   inset: 0;
 
-  background-color: rgb(0 0 0 / 0.35);
+  background: rgb(0 0 0 / 0.35);
 
   z-index: -2;
 }
 
+/* =====================================================
+   CONTENT
+===================================================== */
+
 .hero-content {
   position: relative;
+  z-index: 5;
 
   max-width: 900px;
-
   padding: 20px;
-
-  z-index: 5;
 
   h1 {
     margin-bottom: 20px;
-
     font-size: 4rem;
-    font-weight: 700;
   }
 
   p {
     margin-bottom: 35px;
-
     font-size: 1.3rem;
   }
 }
 
-.btn {
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-}
-
-/* =====================================================
-   HERO ANIMATIONS
-===================================================== */
-
-.hero-content {
-  animation: heroFade 0.8s ease;
-}
-
-.btn {
-  animation:
-    heroFade 1s ease,
-    heroFloat 4s ease-in-out infinite;
-}
-
-@keyframes heroFade {
-  from {
-    opacity: 0;
-    transform: translateY(25px);
+@media (max-width: 900px) {
+  .layer-1 img {
+    --base-y: 0%;
   }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
+  .layer-2 img {
+    --base-y: 10%;
   }
-}
-
-@keyframes heroFloat {
-  0%,
-  100% {
-    transform: translateY(0);
+  .layer-3 img {
+    --base-y: 10%;
   }
-
-  50% {
-    transform: translateY(-4px);
+  .layer-4 img {
+    --base-y: 20%;
   }
 }
